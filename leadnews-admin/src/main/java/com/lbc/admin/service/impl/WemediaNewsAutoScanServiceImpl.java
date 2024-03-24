@@ -1,10 +1,14 @@
 package com.lbc.admin.service.impl;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONException;
 import com.lbc.admin.feign.ArticleFeign;
 import com.lbc.admin.feign.WemediaFeign;
 import com.lbc.admin.mapper.AdChannelMapper;
+import com.lbc.admin.mapper.AdSensitiveMapper;
 import com.lbc.admin.service.WemediaNewsAutoScanService;
 import com.lbc.common.fastdfs.FastDFSClient;
+import com.lbc.common.tess4j.Tess4jClient;
 import com.lbc.model.admin.dtos.NewsAuthDto;
 import com.lbc.model.admin.pojos.AdChannel;
 import com.lbc.model.article.pojos.ApArticle;
@@ -17,6 +21,7 @@ import com.lbc.model.common.enums.AppHttpCodeEnum;
 import com.lbc.model.wemedia.pojos.WmNews;
 import com.lbc.model.wemedia.pojos.WmUser;
 import com.lbc.model.wemedia.vo.WmNewsVo;
+import com.lbc.utils.common.SensitiveWordUtil;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.log4j.Log4j2;
 import org.elasticsearch.action.index.IndexRequest;
@@ -26,8 +31,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @Log4j2
@@ -38,6 +47,9 @@ public class WemediaNewsAutoScanServiceImpl implements WemediaNewsAutoScanServic
 
     @Autowired
     private RestHighLevelClient restHighLevelClient;
+
+    @Autowired
+    private AdSensitiveMapper adSensitiveMapper;
 
 
     @GlobalTransactional
@@ -75,9 +87,87 @@ public class WemediaNewsAutoScanServiceImpl implements WemediaNewsAutoScanServic
         //4.文章状态为1，待审核
         if (wmNews.getStatus() == 1) {
             System.out.println("文章状态为1，待审核");
+
+            //抽取文章内容中的纯文本和图片
+            Map<String, Object> contentAndImagesResult = handleTextAndImages(wmNews);
+
+            //自管理的敏感词审核
+            boolean sensitiveScanBoolean = handleSensitive((String) contentAndImagesResult.get("content"), wmNews);
+
+            if (!sensitiveScanBoolean){
+                updateWmNews(wmNews,(short) 2,"文章存在违禁词，审核失败");
+                return;
+            }
             updateWmNews(wmNews,(short) 3,"文章已提交，待人工审核");
             log.info("文章已提交，待人工审核");
         }
+    }
+
+
+    /**
+     * 提取文本内容和图片
+     *
+     * @param wmNews
+     * @return
+     */
+    private Map<String, Object> handleTextAndImages(WmNews wmNews) {
+
+        //文章的内容
+        String content = wmNews.getContent();
+
+        //存储纯文本内容
+        StringBuilder sb = new StringBuilder();
+        //存储图片
+        List<String> images = new ArrayList<>();
+
+        List<Map> contentList = JSONArray.parseArray(content, Map.class);
+        for (Map map : contentList) {
+            if (map.get("type").equals("text")) {
+                sb.append(map.get("value"));
+            }
+
+            if (map.get("type").equals("image")) {
+                images.add((String) map.get("value"));
+            }
+        }
+
+        if (wmNews.getImages() != null && wmNews.getType() != 0) {
+            String[] split = wmNews.getImages().split(",");
+            images.addAll(Arrays.asList(split));
+        }
+
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("content", sb.toString());
+        resultMap.put("images", images);
+        return resultMap;
+
+    }
+
+    /**
+     * 敏感词审核
+     *
+     * @param content
+     * @param wmNews
+     * @return
+     */
+    private boolean handleSensitive(String content, WmNews wmNews) {
+
+        boolean flag = true;
+
+        List<String> allSensitive = adSensitiveMapper.findAllSensitive();
+        //初始化敏感词
+        SensitiveWordUtil.initMap(allSensitive);
+        //文章内容自管理敏感词过滤
+        Map<String, Integer> resultMap = SensitiveWordUtil.matchWords(content);
+        if (!resultMap.isEmpty()) {
+            log.error("敏感词过滤没有通过，包含了敏感词:{}", resultMap);
+            //找到了敏感词，审核不通过
+            updateWmNews(wmNews, (short) 2, "文章中包含了敏感词");
+            System.out.println("文章中包含了自管理敏感词");
+            flag = false;
+        }
+
+        return flag;
     }
 
 

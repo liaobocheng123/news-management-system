@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3c1d698-2048-4456-8c14-f37248667513" name="更改" comment="后端基本完成">
+      <change afterPath="$PROJECT_DIR$/leadnews-common/src/main/java/com/lbc/common/tess4j/Tess4jClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leadnews-common/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leadnews-admin/src/main/java/com/lbc/admin/service/impl/WemediaNewsAutoScanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/leadnews-admin/src/main/java/com/lbc/admin/service/impl/WemediaNewsAutoScanServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leadnews-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leadnews-admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leadnews-admin/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leadnews-admin/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leadnews-article/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leadnews-article/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leadnews-article/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leadnews-article/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leadnews-behavior/src/main/java/com/lbc/behavior/service/impl/ApBehaviorEntryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/leadnews-behavior/src/main/java/com/lbc/behavior/service/impl/ApBehaviorEntryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leadnews-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/leadnews-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leadnews-common/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/leadnews-common/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leadnews-model/src/main/java/com/lbc/model/behavior/dtos/LikesBehaviorDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/leadnews-model/src/main/java/com/lbc/model/behavior/dtos/LikesBehaviorDto.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.6.3\mvn_repo" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="1.8 (2)" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8 (2)" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2bFwo8N4C1gztiX6VShtk9fWrWQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master1",
+    "last_opened_file_path": "D:/IdeaProjects/day03",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15136719",
+    "project.structure.side.proportion": "0.3559908",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mongo"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\news-management-system\news-management-system\leadnews-parent\leadnews-common\src\main\resources" />
+      <recent name="D:\IdeaProjects\news-management-system\news-management-system\leadnews-parent\leadnews-common\src\main\java\com\lbc\common" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.WemediaGatewayApplication">
+    <configuration name="AdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="leadnews-admin" />
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lbc.admin.AdminApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lbc.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="leadnews-article" />
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lbc.article.ArticleApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lbc.article.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="leadnews-admin-gateway" />
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lbc.admin.gateway.GatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lbc.admin.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WemediaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="leadnews-wemedia" />
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lbc.wemedia.WemediaApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lbc.wemedia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WemediaGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="leadnews-wemedia-gateway" />
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lbc.wemedia.gateway.WemediaGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lbc.wemedia.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.WemediaApplication" />
+      <item itemvalue="Spring Boot.WemediaGatewayApplication" />
+      <item itemvalue="Spring Boot.AdminApplication" />
+      <item itemvalue="Spring Boot.ArticleApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.WemediaGatewayApplication" />
+        <item itemvalue="Spring Boot.WemediaApplication" />
+        <item itemvalue="Spring Boot.ArticleApplication" />
+        <item itemvalue="Spring Boot.AdminApplication" />
+        <item itemvalue="Spring Boot.GatewayApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="c3c1d698-2048-4456-8c14-f37248667513" name="更改" comment="" />
+      <created>1705824311075</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705824311075</updated>
+      <workItem from="1705824313250" duration="111000" />
+      <workItem from="1705827211802" duration="3900000" />
+      <workItem from="1705831192245" duration="2075000" />
+      <workItem from="1706176634918" duration="19000" />
+      <workItem from="1706439184874" duration="3069000" />
+      <workItem from="1706444264697" duration="1385000" />
+      <workItem from="1706510447101" duration="13000" />
+      <workItem from="1706757225626" duration="2103000" />
+      <workItem from="1706857669775" duration="237000" />
+      <workItem from="1706861314275" duration="1304000" />
+      <workItem from="1706947178814" duration="1581000" />
+      <workItem from="1707393795499" duration="2017000" />
+      <workItem from="1707732922166" duration="4870000" />
+      <workItem from="1708283426187" duration="1039000" />
+      <workItem from="1708325730833" duration="69000" />
+      <workItem from="1708880764686" duration="996000" />
+      <workItem from="1708932118377" duration="309000" />
+      <workItem from="1709485356191" duration="73000" />
+      <workItem from="1709630545053" duration="4312000" />
+      <workItem from="1709808192240" duration="875000" />
+      <workItem from="1709819041449" duration="4989000" />
+      <workItem from="1709824683557" duration="671000" />
+      <workItem from="1709868118378" duration="241000" />
+      <workItem from="1709876467044" duration="1180000" />
+      <workItem from="1709878647833" duration="957000" />
+      <workItem from="1710863123683" duration="1317000" />
+    </task>
+    <task id="LOCAL-00001" summary="后端基本完成">
+      <option name="closed" value="true" />
+      <created>1706771794008</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706771794009</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="后端基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端基本完成" />
+  </component>
+</project>

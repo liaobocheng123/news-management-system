@@ -12,7 +12,6 @@ public class ApBehaviorEntryServiceImpl extends ServiceImpl<ApBehaviorEntryMappe
 
     @Override
     public ApBehaviorEntry findByUserIdOrEquipmentId(Integer userId, Integer equipmentId){
-
         //根据用户查询行为实体
         if(userId != null){
           return getOne(Wrappers.<ApBehaviorEntry>lambdaQuery().eq(ApBehaviorEntry::getEntryId,userId).eq(ApBehaviorEntry::getType,1));

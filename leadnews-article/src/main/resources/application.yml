@@ -2,7 +2,6 @@ server:
   port: 9003
 spring:
   autoconfigure:
-    #esSearch学习时加入，忽略本模块自动装配数据库了，一是因为加入了seata会有代理数据库连接，二是为了test中的es同步数据测试ArticleEsTest.testImportAll能够进行
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
   application:
     name: leadnews-article
